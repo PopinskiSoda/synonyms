@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input } from './Input';
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import {
     DELETE_SYNONYM,
     EDIT_SYNONYM,
@@ -12,11 +12,11 @@ export const Card = ({id, text, isEditing}) => {
     const dispatch = useDispatch()
     const [currentText, setCurrentText] = useState(text);
 
-    const handleChange = (event) => {
+    const handleChange = useCallback((event) => {
         setCurrentText(event.target.value);
-    }
+    }, [])
 
-    const handleSave = () => {
+    const handleSave = useCallback(() => {
         dispatch({
             type: EDIT_SYNONYM,
             id: id,
@@ -27,24 +27,24 @@ export const Card = ({id, text, isEditing}) => {
             id: id,
             isEditing: false,
         });
-    }
+    }, [id, currentText])
 
-    const handleEdit = () => {
+    const handleEdit = useCallback(() => {
         dispatch({
             type: SET_IS_EDITING,
             id: id,
             isEditing: true,
         });
-    }
+    }, [id])
 
-    const handleCancel = () => {
+    const handleCancel = useCallback(() => {
         dispatch({
             type: SET_IS_EDITING,
             id: id,
             isEditing: false,
         });
         setCurrentText(text)
-    }
+    }, [id])
 
     const handleDelete = () => {
         dispatch({
