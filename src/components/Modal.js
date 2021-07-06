@@ -10,7 +10,11 @@ export const Modal = () => {
         <div className='Modal'>
             <div>
                 {cards.map((card) => (
-                    <Card text={card.text} />
+                    <Card
+                        key={card.id}
+                        id={card.id}
+                        text={card.text}
+                    />
                 ))}
             </div>
         </div>

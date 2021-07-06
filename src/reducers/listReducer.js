@@ -1,25 +1,32 @@
+import { EDIT_SYNONYM } from '../constants/actionTypes';
+
 const initState = {
     cards: [
         {
-            text: 'Процент',
+            id: 1, text: 'Процент',
         },
         {
-            text: 'Золотая',
+            id: 2, text: 'Золотая',
         },
         {
-            text: 'Премиум',
+            id: 3, text: 'Премиум',
         },
         {
-            text: 'Кредит',
+            id: 4, text: 'Кредит',
         },
     ]
 }
 
 export const listReducer = (state = initState, action) => {
     switch (action.type) {
-        case 'EDIT_CARD':
+        case EDIT_SYNONYM:
             return {
-                ...state
+                ...state,
+                cards: state.cards.map((card) => (
+                    (card.id === action.id)
+                        ? { ...card, text: action.text }
+                        : card
+                ))
             };
 
         default:
