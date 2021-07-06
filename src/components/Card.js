@@ -8,6 +8,9 @@ import {
     SET_IS_EDITING
 } from '../constants/actionTypes';
 
+import pencil from '../icons/pencil.svg'
+import bucket from '../icons/bucket.svg'
+
 export const Card = ({id, text, isEditing}) => {
     const dispatch = useDispatch()
     const [currentText, setCurrentText] = useState(text);
@@ -46,12 +49,12 @@ export const Card = ({id, text, isEditing}) => {
         setCurrentText(text)
     }, [id])
 
-    const handleDelete = () => {
-        dispatch({
-            type: DELETE_SYNONYM,
-            id: id,
-        })
-    }
+    const handleDelete = useCallback(() => {
+        // dispatch({
+        //     type: DELETE_SYNONYM,
+        //     id: id,
+        // })
+    }, [id])
 
     return (
         <div>
@@ -78,12 +81,12 @@ export const Card = ({id, text, isEditing}) => {
                         <button
                             onClick={handleEdit}
                         >
-                            edit
+                            <img src={pencil}/>
                         </button>
                         <button
                             onClick={handleDelete}
                         >
-                            delete
+                            <img src={bucket}/>
                         </button>
                     </>
                 )}

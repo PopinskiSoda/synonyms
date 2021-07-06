@@ -1,6 +1,7 @@
 import {DELETE_SYNONYM, EDIT_SYNONYM, SET_IS_EDITING} from '../constants/actionTypes';
 
 const initState = {
+    synonymToDelete: null,
     cards: [
         {
             id: 1,

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Circe';
+  src: url('./fonts/Circe-Regular.ttf');
+}
+
 .App {
   display: flex;
   justify-content: center;
@@ -5,4 +10,6 @@
   background: red;
   width: 100vw;
   height: 100vh;
+  font-weight: 700;
+  font-family: Circe;
 }

@@ -2,6 +2,14 @@
   background: #efefef;
   width: 560px;
   height: 560px;
+  padding: 20px;
+
+  &__header {
+    font-size: 20px;
+    line-height: 28px;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 600px) {
