@@ -3,6 +3,7 @@ import { Input } from './Input';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import {
+    DELETE_SYNONYM,
     EDIT_SYNONYM,
     SET_IS_EDITING
 } from '../constants/actionTypes';
@@ -45,6 +46,13 @@ export const Card = ({id, text, isEditing}) => {
         setCurrentText(text)
     }
 
+    const handleDelete = () => {
+        dispatch({
+            type: DELETE_SYNONYM,
+            id: id,
+        })
+    }
+
     return (
         <div>
             {isEditing
@@ -67,10 +75,14 @@ export const Card = ({id, text, isEditing}) => {
                 : (
                     <>
                         {text}
-                        <button onClick={handleEdit}>
+                        <button
+                            onClick={handleEdit}
+                        >
                             edit
                         </button>
-                        <button>
+                        <button
+                            onClick={handleDelete}
+                        >
                             delete
                         </button>
                     </>

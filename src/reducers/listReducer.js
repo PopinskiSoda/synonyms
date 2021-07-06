@@ -1,4 +1,4 @@
-import {EDIT_SYNONYM, SET_IS_EDITING} from '../constants/actionTypes';
+import {DELETE_SYNONYM, EDIT_SYNONYM, SET_IS_EDITING} from '../constants/actionTypes';
 
 const initState = {
     cards: [
@@ -44,6 +44,14 @@ export const listReducer = (state = initState, action) => {
                     (card.id === action.id)
                         ? {...card, isEditing: action.isEditing}
                         : card
+                ))
+            }
+
+        case DELETE_SYNONYM:
+            return {
+                ...state,
+                cards: state.cards.filter((card) => (
+                    card.id !== action.id
                 ))
             }
 
