@@ -14,6 +14,7 @@ export const Modal = () => {
                         key={card.id}
                         id={card.id}
                         text={card.text}
+                        isEditing={card.isEditing}
                     />
                 ))}
             </div>
