@@ -3,12 +3,19 @@
   width: 560px;
   height: 560px;
   padding: 20px;
+  box-sizing: border-box;
 
   &__header {
     font-size: 20px;
     line-height: 28px;
     display: flex;
     justify-content: space-between;
+  }
+
+  &__close-button {
+    background: none;
+    border: none;
+    padding: 0;
   }
 }
 

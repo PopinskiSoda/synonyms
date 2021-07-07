@@ -7,7 +7,7 @@ import {
     EDIT_SYNONYM,
     SET_IS_EDITING
 } from '../constants/actionTypes';
-
+import './Card/index.scss'
 import pencil from '../icons/pencil.svg'
 import bucket from '../icons/bucket.svg'
 
@@ -57,7 +57,7 @@ export const Card = ({id, text, isEditing}) => {
     }, [id])
 
     return (
-        <div>
+        <div className='Card'>
             {isEditing
                 ? (
                     <>
@@ -79,11 +79,13 @@ export const Card = ({id, text, isEditing}) => {
                     <>
                         {text}
                         <button
+                            className='Card__button Card__button--edit'
                             onClick={handleEdit}
                         >
                             <img src={pencil}/>
                         </button>
                         <button
+                            className='Card__button'
                             onClick={handleDelete}
                         >
                             <img src={bucket}/>

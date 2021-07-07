@@ -1,0 +1,28 @@
+.Card {
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  padding: 11px;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  justify-content: space-between;
+  color: #344273;
+
+  &__button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin-left: 10px;
+    line-height: 10px;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--edit {
+      margin-left: auto;
+    }
+  }
+}

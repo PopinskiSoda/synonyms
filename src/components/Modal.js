@@ -1,5 +1,6 @@
 import React from 'react';
 import './Modal/index.scss';
+import cross from '../icons/cross.svg'
 
 export const Modal = ({header, onClose, children}) => {
     return (
@@ -7,9 +8,10 @@ export const Modal = ({header, onClose, children}) => {
             <div className='Modal__header'>
                 <div>{header}</div>
                 <button
+                    className='Modal__close-button'
                     onClick={onClose}
                 >
-                    x
+                    <img src={cross}/>
                 </button>
             </div>
             <div>
