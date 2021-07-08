@@ -1,3 +1,19 @@
 .Button {
+  font-family: Circe;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  margin-right: 20px;
 
+  &--success {
+    background: #5e9574;
+  }
+
+  &--danger {
+    background: #955e5e;
+  }
 }
