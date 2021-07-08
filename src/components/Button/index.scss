@@ -9,6 +9,7 @@
   color: #ffffff;
   margin-right: 20px;
   cursor: pointer;
+  white-space: nowrap;
 
   &--success {
     background: #5e9574;
@@ -16,5 +17,9 @@
 
   &--danger {
     background: #955e5e;
+  }
+
+  &--main {
+    background: #344273;;
   }
 }

@@ -50,10 +50,6 @@ export const Card = ({id, text, isEditing}) => {
     }, [id])
 
     const handleDelete = useCallback(() => {
-        // dispatch({
-        //     type: DELETE_SYNONYM,
-        //     id: id,
-        // })
         dispatch({
             type: SET_SYNONYM_FOR_DELETE,
             id: id,

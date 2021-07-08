@@ -36,11 +36,12 @@
     border-top: 2px solid #DEDEDE;
     margin-top: auto;
     padding-top: 19px;
+    display: flex;
   }
 
   &--small {
-    width: 350px;
-    height: 150px;
+    width: 400px;
+    height: 185px;
   }
 }
 
