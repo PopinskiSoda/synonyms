@@ -3,6 +3,8 @@ import { Card } from './Card';
 import { Modal } from './Modal';
 import { useSelector } from 'react-redux';
 import { Button } from './Button';
+import information from '../icons/information.svg'
+import './SynonymsModal/index.scss'
 
 export const SynonymsModal = ({onClose}) => {
     const cards = useSelector(state => state.cards);
@@ -18,6 +20,12 @@ export const SynonymsModal = ({onClose}) => {
                 </>
             }
         >
+            <div className='SynonymsModal__information'>
+                <div className='SynonymsModal__information-text'>
+                    Синонимы
+                </div>
+                <img src={information}/>
+            </div>
             {cards.map((card) => (
                 <Card
                     key={card.id}
