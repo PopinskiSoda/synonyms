@@ -1,13 +1,13 @@
 import React from 'react';
 import { Modal } from './Modal';
 
-export const Confirm = ({onClose, synonymToDelete}) => {
+export const Confirm = ({onClose, synonymToDeleteId}) => {
     return (
         <Modal
-            header={'Подтверждение действия'}
+            title={'Подтверждение действия'}
             onClose={onClose}
         >
-            {`Подтвердите удаление синонима «${synonymToDelete}»`}
+            {`Подтвердите удаление синонима «${synonymToDeleteId}»`}
         </Modal>
     )
 }

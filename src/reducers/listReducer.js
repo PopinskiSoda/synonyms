@@ -1,7 +1,12 @@
-import {DELETE_SYNONYM, EDIT_SYNONYM, SET_IS_EDITING} from '../constants/actionTypes';
+import {
+    DELETE_SYNONYM,
+    EDIT_SYNONYM,
+    SET_IS_EDITING,
+    SET_SYNONYM_FOR_DELETE
+} from '../constants/actionTypes';
 
 const initState = {
-    synonymToDelete: null,
+    synonymToDeleteId: null,
     cards: [
         {
             id: 1,
@@ -46,6 +51,12 @@ export const listReducer = (state = initState, action) => {
                         ? {...card, isEditing: action.isEditing}
                         : card
                 ))
+            }
+
+        case SET_SYNONYM_FOR_DELETE:
+            return {
+                ...state,
+                synonymToDeleteId: action.id,
             }
 
         case DELETE_SYNONYM:

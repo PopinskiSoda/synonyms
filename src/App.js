@@ -1,13 +1,11 @@
 import './App.css';
-import { Modal } from './components/Modal.js';
 import React, { useCallback, useState } from 'react';
-import { Card } from './components/Card';
 import { useSelector } from 'react-redux';
 import { Confirm } from './components/Confirm';
+import {SynonymsModal} from "./components/SynonymsModal";
 
 function App() {
-    const cards = useSelector(state => state.cards);
-    const synonymToDelete = useSelector((state) => state.synonymToDelete)
+    const synonymToDeleteId = useSelector((state) => state.synonymToDeleteId)
 
     const [isModalOpened, setIsModalOpened] = useState(true);
 
@@ -18,24 +16,12 @@ function App() {
     return (
         <div className="App">
             {
-                isModalOpened && !synonymToDelete && (
-                    <Modal
-                        header={'Редактирование группы синонимов поисковых фраз'}
-                        onClose={handleCloseList}
-                    >
-                        {cards.map((card) => (
-                            <Card
-                                key={card.id}
-                                id={card.id}
-                                text={card.text}
-                                isEditing={card.isEditing}
-                            />
-                        ))}
-                    </Modal>
+                isModalOpened && !synonymToDeleteId && (
+                    <SynonymsModal onClose={handleCloseList}/>
                 )
             }
-            {synonymToDelete && (
-                <Confirm synonymToDelete={synonymToDelete}/>
+            {synonymToDeleteId && (
+                <Confirm synonymToDeleteId={synonymToDeleteId}/>
             )}
         </div>
     );

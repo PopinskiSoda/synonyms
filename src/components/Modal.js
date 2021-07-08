@@ -2,11 +2,16 @@ import React from 'react';
 import './Modal/index.scss';
 import cross from '../icons/cross.svg'
 
-export const Modal = ({header, onClose, children}) => {
+export const Modal = ({
+    title,
+    onClose,
+    children,
+    controls,
+}) => {
     return (
         <div className='Modal'>
             <div className='Modal__header'>
-                <div>{header}</div>
+                <div className='Modal__title'>{title}</div>
                 <button
                     className='Modal__close-button'
                     onClick={onClose}
@@ -16,6 +21,9 @@ export const Modal = ({header, onClose, children}) => {
             </div>
             <div>
                 {children}
+            </div>
+            <div className='Modal__controls'>
+                {controls}
             </div>
         </div>
     );

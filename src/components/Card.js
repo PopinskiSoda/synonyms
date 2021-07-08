@@ -3,9 +3,9 @@ import { Input } from './Input';
 import { useDispatch } from 'react-redux';
 import { useState, useCallback } from 'react';
 import {
-    DELETE_SYNONYM,
     EDIT_SYNONYM,
-    SET_IS_EDITING
+    SET_IS_EDITING,
+    SET_SYNONYM_FOR_DELETE,
 } from '../constants/actionTypes';
 import './Card/index.scss'
 import pencil from '../icons/pencil.svg'
@@ -54,6 +54,10 @@ export const Card = ({id, text, isEditing}) => {
         //     type: DELETE_SYNONYM,
         //     id: id,
         // })
+        dispatch({
+            type: SET_SYNONYM_FOR_DELETE,
+            id: id,
+        })
     }, [id])
 
     return (
