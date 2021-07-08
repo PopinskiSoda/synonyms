@@ -7,9 +7,10 @@ export const Modal = ({
     onClose,
     children,
     controls,
+    size,
 }) => {
     return (
-        <div className='Modal'>
+        <div className={`Modal${size ? ` Modal--${size}` : ''}`}>
             <div className='Modal__header'>
                 <div className='Modal__title'>{title}</div>
                 <button

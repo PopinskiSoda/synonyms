@@ -6,6 +6,7 @@ export const Confirm = ({onClose, synonymToDeleteId}) => {
         <Modal
             title={'Подтверждение действия'}
             onClose={onClose}
+            size='small'
         >
             {`Подтвердите удаление синонима «${synonymToDeleteId}»`}
         </Modal>

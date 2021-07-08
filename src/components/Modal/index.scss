@@ -29,12 +29,18 @@
     background: none;
     border: none;
     padding: 0;
+    cursor: pointer;
   }
 
   &__controls {
     border-top: 2px solid #DEDEDE;
     margin-top: auto;
     padding-top: 19px;
+  }
+
+  &--small {
+    width: 350px;
+    height: 150px;
   }
 }
 
