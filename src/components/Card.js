@@ -10,6 +10,7 @@ import {
 import './Card/index.scss'
 import pencil from '../icons/pencil.svg'
 import bucket from '../icons/bucket.svg'
+import { Button } from './Button';
 
 export const Card = ({id, text, isEditing}) => {
     const dispatch = useDispatch()
@@ -57,7 +58,7 @@ export const Card = ({id, text, isEditing}) => {
     }, [id])
 
     return (
-        <div className='Card'>
+        <div className={`Card${isEditing ? ' Card--is-editing' : ''}`}>
             {isEditing
                 ? (
                     <>
@@ -65,14 +66,19 @@ export const Card = ({id, text, isEditing}) => {
                             value={currentText}
                             onChange={handleChange}
                         />
-                        <button onClick={handleSave}>
-                            save
-                        </button>
-                        <button
-                            onClick={handleCancel}
-                        >
-                            cancel
-                        </button>
+                        <div>
+                            <Button
+                                onClick={handleSave}
+                                text='сохранить'
+                                type='main'
+                            >
+                            </Button>
+                            <button
+                                onClick={handleCancel}
+                            >
+                                cancel
+                            </button>
+                        </div>
                     </>
                 )
                 : (

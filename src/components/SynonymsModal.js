@@ -5,9 +5,11 @@ import { useSelector } from 'react-redux';
 import { Button } from './Button';
 import information from '../icons/information.svg'
 import './SynonymsModal/index.scss'
+import { AddForm } from './AddForm';
 
 export const SynonymsModal = ({onClose}) => {
     const cards = useSelector(state => state.cards);
+    const isEditing = useSelector(state => state.cards.find((item) => item.isEditing))
 
     return (
         <Modal
@@ -26,6 +28,7 @@ export const SynonymsModal = ({onClose}) => {
                 </div>
                 <img src={information}/>
             </div>
+            {!isEditing && <AddForm/>}
             {cards.map((card) => (
                 <Card
                     key={card.id}

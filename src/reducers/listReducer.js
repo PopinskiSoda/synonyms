@@ -1,4 +1,5 @@
 import {
+    ADD_SYNONYM,
     DELETE_SYNONYM,
     EDIT_SYNONYM,
     SET_IS_EDITING,
@@ -65,6 +66,12 @@ export const listReducer = (state = initState, action) => {
                 cards: state.cards.filter((card) => (
                     card.id !== action.id
                 ))
+            }
+
+        case ADD_SYNONYM:
+            return {
+                ...state,
+                cards: [action.payload, ...state.cards],
             }
 
         default:

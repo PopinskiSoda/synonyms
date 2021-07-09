@@ -9,6 +9,12 @@
   justify-content: space-between;
   color: #344273;
 
+  &--is-editing {
+    background: none;
+    flex-direction: column;
+    padding: 0;
+  }
+
   &__button {
     border: none;
     background: none;
