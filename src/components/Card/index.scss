@@ -32,4 +32,19 @@
       margin-left: auto;
     }
   }
+
+  &__input {
+    margin-bottom: 5px;
+  }
+
+  &__cross-button {
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-top: 3px;
+  }
+
+  &__buttons-container {
+    display: flex;
+  }
 }

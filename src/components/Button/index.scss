@@ -3,7 +3,7 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 14px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border: none;
   border-radius: 3px;
   color: #ffffff;
@@ -13,13 +13,38 @@
 
   &--success {
     background: #5e9574;
+    border: 2px solid #5e9574;
+    &:hover {
+      color: #5e9574;
+    }
   }
 
   &--danger {
     background: #955e5e;
+    border: 2px solid #955e5e;
+    &:hover {
+      color: #955e5e;
+    }
   }
 
   &--main {
-    background: #344273;;
+    background: #344273;
+    border: 2px solid #344273;
+    &:hover {
+      color: #344273;
+    }
+  }
+
+  &--main-small-margin {
+    background: #344273;
+    border: 2px solid #344273;
+    &:hover {
+      color: #344273;
+    }
+    margin-right: 12px;
+  }
+
+  &:hover {
+    background: #ffffff;
   }
 }

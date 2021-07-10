@@ -4,6 +4,7 @@ import { Button } from './Button';
 import { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { ADD_SYNONYM } from '../constants/actionTypes';
+import './AddForm/index.scss';
 
 export const AddForm = () => {
     const [currentValue, setCurrentValue] = useState('');
@@ -25,13 +26,22 @@ export const AddForm = () => {
     }, [currentValue])
 
     return (
-        <>
-            <Input onChange={handleChange}/>
+        <div className='AddForm'>
+            <div
+                className='AddForm__title'
+            >
+                добавление синонима:
+            </div>
+            <Input
+                onChange={handleChange}
+                placeholder='Введите название'
+            />
             <Button
+                className='AddForm__button'
                 text='добавить'
                 type='main'
                 onClick={handleAdd}
             />
-        </>
+        </div>
     )
 }

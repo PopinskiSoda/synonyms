@@ -10,6 +10,7 @@ import {
 import './Card/index.scss'
 import pencil from '../icons/pencil.svg'
 import bucket from '../icons/bucket.svg'
+import cross from '../icons/cross.svg'
 import { Button } from './Button';
 
 export const Card = ({id, text, isEditing}) => {
@@ -63,20 +64,22 @@ export const Card = ({id, text, isEditing}) => {
                 ? (
                     <>
                         <Input
+                            className='Card__input'
                             value={currentText}
                             onChange={handleChange}
                         />
-                        <div>
+                        <div className='Card__buttons-container'>
                             <Button
                                 onClick={handleSave}
                                 text='сохранить'
-                                type='main'
+                                type='main-small-margin'
                             >
                             </Button>
                             <button
                                 onClick={handleCancel}
+                                className='Card__cross-button'
                             >
-                                cancel
+                                <img src={cross} />
                             </button>
                         </div>
                     </>

@@ -1,0 +1,16 @@
+.AddForm {
+  display: flex;
+  flex-direction: column;
+
+  &__button {
+    align-self: baseline;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    size: 14px;
+    font-weight: normal;
+    color: #787878;
+  }
+}
