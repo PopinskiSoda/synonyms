@@ -1,35 +1,19 @@
 import {
     ADD_SYNONYM,
+    CLEAR_SYNONYMS,
     DELETE_SYNONYM,
     EDIT_SYNONYM,
     SET_IS_EDITING,
     SET_SYNONYM_FOR_DELETE
 } from '../constants/actionTypes';
 
+const localStorage = window.localStorage;
+
+const cards = JSON.parse(localStorage.getItem('cards') || '[]')
+
 const initState = {
     synonymToDeleteId: null,
-    cards: [
-        {
-            id: 1,
-            text: 'Процент',
-            isEditing: false,
-        },
-        {
-            id: 2,
-            text: 'Золотая',
-            isEditing: false,
-        },
-        {
-            id: 3,
-            text: 'Премиум',
-            isEditing: false,
-        },
-        {
-            id: 4,
-            text: 'Кредит',
-            isEditing: false,
-        },
-    ]
+    cards: cards,
 }
 
 export const listReducer = (state = initState, action) => {
@@ -72,6 +56,12 @@ export const listReducer = (state = initState, action) => {
             return {
                 ...state,
                 cards: [action.payload, ...state.cards],
+            }
+
+        case CLEAR_SYNONYMS:
+            return {
+                ...state,
+                cards: [],
             }
 
         default:
